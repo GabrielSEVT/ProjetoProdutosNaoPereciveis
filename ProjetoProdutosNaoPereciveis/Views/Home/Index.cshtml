@@ -1,0 +1,64 @@
+﻿@model ProjetoProdutosNaoPereciveis.Models.NaoPereciveis
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cadastro de produtos não perecíveis</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Cadastro do produto</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>  
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Peso)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Peso)
+            @Html.ValidationMessageFor(model => model.Peso)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Categoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Categoria)
+            @Html.ValidationMessageFor(model => model.Categoria)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorUnitario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorUnitario)
+            @Html.ValidationMessageFor(model => model.ValorUnitario)
+        </div>
+        <br>
+
+        <p><input type="submit" value="Cadastrar"></p>
+
+    </fieldset>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval");        
+    }
+}
